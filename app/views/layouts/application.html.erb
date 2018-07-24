@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= notice %>
+  <%= alert %>
+  <ul>
+  
+    <li><%= link_to 'home', home_index_path %></li>
+	<% unless current_user.nil? %>
+		<li><%= link_to 'My account',  edit_user_registration_path  %></li>
+	<% end %>
+	<li><%= link_to_if  current_user.nil?, 'signin', new_user_session_path  %></li>
+	<li><%= link_to_if current_user.nil?, 'signup', new_user_registration_path %></li>
+	
+  </ul>	
+    <%= yield %>
+  </body>
+</html>
