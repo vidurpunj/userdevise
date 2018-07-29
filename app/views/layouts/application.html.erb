@@ -16,6 +16,7 @@
     <li><%= link_to 'home', home_index_path %></li>
 	<% unless current_user.nil? %>
 		<li><%= link_to 'My account',  edit_user_registration_path  %></li>
+		<li><%= link_to 'logout', destroy_user_session_path, method: :delete %> </li>	
 	<% end %>
 	<li><%= link_to_if  current_user.nil?, 'signin', new_user_session_path  %></li>
 	<li><%= link_to_if current_user.nil?, 'signup', new_user_registration_path %></li>
