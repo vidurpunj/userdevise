@@ -60,3 +60,9 @@ end
 #1 calculate factorial by paasing value via cli
 #2 Backup a file using library 'file_utils' , see ruby docmentation of 'file_utils' http://ruby-doc.org/stdlib-2.0.0/libdoc/fileutils/rdoc/FileUtils.html
 #3 How to do things silently using verbose block
+
+desc 'show git status'
+
+task :git_status do
+	sh "git status"
+end
