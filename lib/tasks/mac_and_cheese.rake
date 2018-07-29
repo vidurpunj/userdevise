@@ -62,7 +62,11 @@ end
 #3 How to do things silently using verbose block
 
 desc 'show git status'
-
 task :git_status do
 	sh "git status"
+end
+
+desc "Show how to run a ruby command"
+task :ruby_cli do
+	ruby "pgm_files/hello.rb"	 #Run any ruby program
 end
